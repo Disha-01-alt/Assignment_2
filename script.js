@@ -29,3 +29,14 @@ document.getElementById('val').addEventListener('input', function () {
         matrixContainer.appendChild(document.createElement('br'));
     }
     
+    const factorButton = document.createElement('button');
+    factorButton.textContent = 'Calculate LDU Factorization';
+    factorButton.addEventListener('click', function () {
+        const numericMatrix = matrix.map(row => row.map(input => parseFloat(input.value) || 0));
+        const { eliminationMatrices, L_steps, U, D } = LDUFactorization(numericMatrix);
+        displayResults(eliminationMatrices, L_steps, U, D, numericMatrix);
+    });
+
+    matrixContainer.appendChild(factorButton);
+});
+
