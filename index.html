@@ -7,27 +7,25 @@
 	<meta name="description" content="This webpage is created to find LDU Factorization of a matrix">
 	<title>LDU Factorization</title>
 	<link rel="stylesheet" href="styles.css">
-
+	
 </head>
 
 <body>
-	<div id="heading-h1">
-		<h1>LDU Factorization</h1>
-	</div>
-	<div id="label">
+	<h1>LDU Factorization</h1>
+	<div>
 		<label for="val">Enter the order of the matrix:</label>
-		<input type="number" id="val" name="val" class="input-tags"></input>
-		<p id="error"></p>
+		<input type="number" id="val" min="1">
+		<button id="generate">Generate Matrix</button>
 	</div>
-
+	<div id="error" style="color: red;"></div>
+	
 	<div id="input-matrix-container"></div>
-
-	<div id="main-div"></div>
-
-
+	
+	<div id="results"></div>
 
 	<script src="script.js"></script>
 
 
 </body>
+</html>
 
