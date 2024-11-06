@@ -86,7 +86,7 @@ function multiplyMatrices(A, B) {
 
 function displayResults(eliminationMatrices) {
     const resultsDiv = document.getElementById('results');
-    resultsDiv.innerHTML = '<h2>Results</h2>';
+    resultsDiv.innerHTML = '<h2>Results</h2><hr>';
 
     resultsDiv.innerHTML += '<h3>Elimination Matrices:</h3>';
     eliminationMatrices.forEach(({ E, step }) => {
