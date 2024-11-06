@@ -69,6 +69,20 @@ function LDUFactorization(matrix) {
     return { eliminationMatrices, L_steps, U, D };
 }
 
+function multiplyMatrices(A, B) {
+    const n = A.length;
+    const result = Array.from({ length: n }, () => Array(n).fill(0));
+
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+            for (let k = 0; k < n; k++) {
+                result[i][j] += A[i][k] * B[k][j];
+            }
+            result[i][j] = parseFloat(result[i][j].toFixed(10)); // Control precision in the result
+        }
+    }
+    return result;
+}
 
 function displayResults(eliminationMatrices) {
     const resultsDiv = document.getElementById('results');
@@ -77,9 +91,14 @@ function displayResults(eliminationMatrices) {
     resultsDiv.innerHTML += '<h3>Elimination Matrices:</h3>';
     eliminationMatrices.forEach(({ E, step }) => {
         resultsDiv.innerHTML += `<h4>${step}:</h4>` + matrixToHtml(E);
-    })
+    });
 
-}
+  resultsDiv.innerHTML += '<h3>Lower Triangular Matrix L (Step-by-Step Construction):</h3>';
+    L_steps.forEach((L, index) => {
+        resultsDiv.innerHTML += `<h4>After step ${index + 1}:</h4>` + matrixToHtml(L);
+    });  
+
+
 
 
 function matrixToHtml(matrix) {
