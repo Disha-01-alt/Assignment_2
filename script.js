@@ -68,3 +68,20 @@ function LDUFactorization(matrix) {
     const D = Array.from({ length: n }, (_, i) => Array.from({ length: n }, (_, j) => (i === j ? U[i][i] : 0)));
     return { eliminationMatrices, L_steps, U, D };
 }
+
+
+function displayResults(eliminationMatrices) {
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = '<h2>Results</h2>';
+
+    resultsDiv.innerHTML += '<h3>Elimination Matrices:</h3>';
+    eliminationMatrices.forEach(({ E, step }) => {
+        resultsDiv.innerHTML += `<h4>${step}:</h4>` + matrixToHtml(E);
+    })
+
+}
+
+
+function matrixToHtml(matrix) {
+    return '<pre>' + matrix.map(row => row.map(value => isNaN(value) ? 0 : value).join(' ')).join('\n') + '</pre>';
+}
