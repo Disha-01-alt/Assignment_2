@@ -98,6 +98,21 @@ function displayResults(eliminationMatrices) {
         resultsDiv.innerHTML += `<h4>After step ${index + 1}:</h4>` + matrixToHtml(L);
     });  
 
+    resultsDiv.innerHTML += '<h3>Upper Triangular Matrix U (Constructed Step-by-Step):</h3>';
+    let U_temp = JSON.parse(JSON.stringify(originalMatrix));
+    resultsDiv.innerHTML += `<h4>Initial Matrix:</h4>` + matrixToHtml(U_temp);
+    eliminationMatrices.forEach(({ E, step }) => {
+        U_temp = multiplyMatrices(E, U_temp);
+        resultsDiv.innerHTML += `<h4>${step}:</h4>` + matrixToHtml(U_temp);
+    });
+
+    resultsDiv.innerHTML += '<h3>Lower Triangular Matrix L:</h3>' + matrixToHtml(L_steps[L_steps.length - 1]);
+    resultsDiv.innerHTML += '<h3>Diagonal Matrix D:</h3>' + matrixToHtml(D);
+    resultsDiv.innerHTML += '<h3>Final Upper Triangular Matrix U:</h3>' + matrixToHtml(U);
+
+    // Create U' (U_prime) from U with diagonal elements set to 1
+    const U_prime = U.map((row, i) => row.map((value, j) => (i === j ? 1 : value)));
+
 
 
 
