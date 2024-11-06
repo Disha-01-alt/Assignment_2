@@ -40,3 +40,31 @@ document.getElementById('val').addEventListener('input', function () {
     matrixContainer.appendChild(factorButton);
 });
 
+function LDUFactorization(matrix) {
+    const n = matrix.length;
+    const L_steps = [];
+    const eliminationMatrices = [];
+    const U = JSON.parse(JSON.stringify(matrix));
+
+    let L = Array.from({ length: n }, (_, i) => Array.from({ length: n }, (_, j) => (i === j ? 1 : 0)));
+
+    for (let i = 0; i < n; i++) {
+        for (let j = i + 1; j < n; j++) {
+            const multiplier = U[j][i] / U[i][i];
+            L[j][i] = multiplier;
+
+            for (let k = i; k < n; k++) {
+                U[j][k] -= multiplier * U[i][k];
+                U[j][k] = parseFloat(U[j][k].toFixed(10)); // Control precision
+            }
+
+            let E = Array.from({ length: n }, (_, x) => Array.from({ length: n }, (_, y) => (x === y ? 1 : 0)));
+            E[j][i] = -multiplier;
+            eliminationMatrices.push({ E, step: `Elimination to make U[${j}][${i}] = 0` });
+        }
+        L_steps.push(JSON.parse(JSON.stringify(L)));
+    }
+    
+    const D = Array.from({ length: n }, (_, i) => Array.from({ length: n }, (_, j) => (i === j ? U[i][i] : 0)));
+    return { eliminationMatrices, L_steps, U, D };
+}
