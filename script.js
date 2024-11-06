@@ -117,5 +117,14 @@ function displayResults(eliminationMatrices) {
 
 
 function matrixToHtml(matrix) {
-    return '<pre>' + matrix.map(row => row.map(value => isNaN(value) ? 0 : value).join(' ')).join('\n') + '</pre>';
+    let html = '<table border="1" style="border-collapse: collapse;">';
+    matrix.forEach(row => {
+        html += '<tr>';
+        row.forEach(value => {
+            html += '<td>' + (isNaN(value) ? 0 : value) + '</td>';
+        });
+        html += '</tr>';
+    });
+    html += '</table>';
+    return html;
 }
