@@ -112,6 +112,18 @@ function displayResults(eliminationMatrices) {
 
     // Create U' (U_prime) from U with diagonal elements set to 1
     const U_prime = U.map((row, i) => row.map((value, j) => (i === j ? 1 : value)));
+    resultsDiv.innerHTML += '<h3>Modified Upper Triangular Matrix U\' (U with 1s on the diagonal):</h3>' + matrixToHtml(U_prime);
+
+    const LU = multiplyMatrices(L_steps[L_steps.length - 1], U);
+
+    resultsDiv.innerHTML += '<h3>Result of L*D*U\':</h3>' + matrixToHtml(LU);
+
+    const isEqual = LU.every((row, i) => row.every((value, j) => Math.abs(value - originalMatrix[i][j]) < 1e-10));
+    resultsDiv.innerHTML += isEqual
+        ? '<h3 style="color: green;">A = L*D*U\' verified!</h3>'
+        : '<h3 style="color: red;">A ≠ L*D*U\', factorization may be incorrect.</h3>';
+}
+
 
 
 
