@@ -84,7 +84,7 @@ function multiplyMatrices(A, B) {
     return result;
 }
 
-function displayResults(eliminationMatrices) {
+function displayResults(eliminationMatrices, L_steps, U, D, originalMatrix) {
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = '<h2>Results</h2><hr>';
 
