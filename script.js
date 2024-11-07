@@ -60,7 +60,7 @@ function LDUFactorization(matrix) {
 
             let E = Array.from({ length: n }, (_, x) => Array.from({ length: n }, (_, y) => (x === y ? 1 : 0)));
             E[j][i] = -multiplier;
-            eliminationMatrices.push({ E, step: `E${j+1}${i+1}` });
+            eliminationMatrices.push({ E, step: `Elimination to make U[${j}][${i}] = 0` });
         }
         L_steps.push(JSON.parse(JSON.stringify(L)));
     }
