@@ -44,86 +44,43 @@ h3{
 
 
 
-h3 {
-    
-    color: #333;
-    font-size: 18px;
-    margin-top: 20px;
-    text-align: left;
+@media (max-width:450px){
+	.input-tags{
+		width:40px;
+		height:auto
+	}
 }
 
-table {
-    width: 50%;
-    margin: 20px auto;
-    border-collapse: collapse;
+#btn-decompose{
+	font-size: 24px;
+	border:1px solid rgb(255, 136, 0);
+	border-radius: 18px;
+	padding:10px 16px 10px 16px;
+	font-weight: 700;
+	background-image: linear-gradient(to right,rgb(255, 64, 12), rgb(244, 237, 31));
+	transition-property:all;
+	transition-timing-function: ease-in-out;
+	transition-duration: 0.4s;
 }
 
-table, th, td {
-    border: 1px solid #ddd;
+#btn-decompose:hover{
+	background-image: linear-gradient(to right, rgb(244, 237, 31),rgb(255, 64, 12));
+	transform: scale(1.12);
+
+}
+#btn-decompose:active{
+	border:3px solid rgb(255, 174, 0);
+	transform: scale(1.12);
 }
 
-th, td {
-    padding: 10px;
-    text-align: center;
+#input-matrix-container{
+	text-align: center;
 }
 
-th {
-    background-color: #f2f2f2;
-    color: #333;
+#main-div{
+	text-align: center;
+}
+#result-div{
+	text-align: center;
 }
 
-td {
-    background-color: #fff;
-    color: #333;
-    width:20px;
-    height:20px
-}
-
-pre {
-
-    font-size: 16px;
-    line-height: 1.6;
-    margin: 0;
-    padding: 10px;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-}
-
-.matrix-title {
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    border: none;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-h4 {
-    
-    text-align: center;
-    font-size: 16px;
-    color: #333;
-    margin-top: 20px;
-}
-
-
-#inp-val{
-    text-align: center;
-}
-#val{
-    width: 40px;
-    font-size: 18px;
-}
