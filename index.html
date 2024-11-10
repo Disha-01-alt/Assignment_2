@@ -11,17 +11,24 @@
 </head>
 
 <body>
-	<h1>LDU Factorization</h1>
-	<div>
-		<label for="val">Enter the order of the matrix:</label>
-		<input type="number" id="val" min="1">
+	<div id="heading-h1">
+		<h1 align="center">LDU Factorization</h1>
 	</div>
-	<div id="error" style="color: red;"></div>
-	
-	<div id="input-matrix-container"></div>
-	
-	<div id="results"></div>
 
+
+	<div id="label">
+		<label for="val">Enter the order of the matrix:</label>
+		<input type="number" id="val" name="val" class="input-tags"></input>
+		<p id="error"></p>
+	</div>
+
+	<div id="input-matrix-container"></div>
+
+	<div id="main-div"></div>
+	
+	<div id="result-div">
+		<br>
+	</div>
 	<script>
 val=document.getElementById("val")
 val.addEventListener("input",iferror)
