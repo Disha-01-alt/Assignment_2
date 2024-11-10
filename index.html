@@ -41,6 +41,32 @@ function iferror(){
 
 }
 
+
+function decompose(){
+    result_div = document.getElementById("result-div");
+    result_div.innerHTML = "<h3>Entered Matrix:</h3>";
+    for (i=1;i<=(val);i++){
+		const br=document.createElement("br")
+		result_div.appendChild(br)
+        document.body.appendChild(result_div);
+		for (j=1;j<=(val);j++){
+			const input1=document.createElement("input");
+			input1.style.backgroundColor="white";
+			input1.style.borderColor="black";
+			input1.style.borderWidth="1px";
+            input1.readOnly=true;
+            inp_val=document.getElementById(`inp${i}${j}`).value;
+            input1.value=inp_val
+			input1.setAttribute("id",`inp${i}${j}`);
+			input1.setAttribute("class","input-tags");
+			input1.setAttribute("type","number");
+			result_div.appendChild(input1);
+			document.body.appendChild(result_div);
+
+	}
+	}
+}
+
 function create_matrix(){
     val=document.getElementById("val").value;
     i_m_c=document.getElementById("input-matrix-container");
