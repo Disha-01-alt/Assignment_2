@@ -1,5 +1,5 @@
 body {
-    background-image: url("a.webp");
+    background-image: url("bimage.png");
 }
 
 #heading-h1 {
@@ -84,3 +84,7 @@ h3 {
 #result-div {
     text-align: center;
 }
+table {
+    margin: 0 auto;
+}
+
