@@ -28,7 +28,7 @@ document.getElementById('val').addEventListener('input', function () {
         matrix.push(row);
         matrixContainer.appendChild(document.createElement('br'));
     }
-    
+
     const factorButton = document.createElement('button');
     factorButton.textContent = 'Calculate LDU Factorization';
     factorButton.addEventListener('click', function () {
@@ -64,7 +64,7 @@ function LDUFactorization(matrix) {
         }
         L_steps.push(JSON.parse(JSON.stringify(L)));
     }
-    
+
     const D = Array.from({ length: n }, (_, i) => Array.from({ length: n }, (_, j) => (i === j ? U[i][i] : 0)));
     return { eliminationMatrices, L_steps, U, D };
 }
@@ -86,17 +86,17 @@ function multiplyMatrices(A, B) {
 
 function displayResults(eliminationMatrices, L_steps, U, D, originalMatrix) {
     const resultsDiv = document.getElementById('results');
-    resultsDiv.innerHTML = '<h2>Results</h2><hr>';
+    resultsDiv.innerHTML = '<h2>Results</h2>';
 
     resultsDiv.innerHTML += '<h3>Elimination Matrices:</h3>';
     eliminationMatrices.forEach(({ E, step }) => {
         resultsDiv.innerHTML += `<h4>${step}:</h4>` + matrixToHtml(E);
     });
 
-  resultsDiv.innerHTML += '<h3>Lower Triangular Matrix L (Step-by-Step Construction):</h3>';
+    resultsDiv.innerHTML += '<h3>Lower Triangular Matrix L (Step-by-Step Construction):</h3>';
     L_steps.forEach((L, index) => {
         resultsDiv.innerHTML += `<h4>After step ${index + 1}:</h4>` + matrixToHtml(L);
-    });  
+    });
 
     resultsDiv.innerHTML += '<h3>Upper Triangular Matrix U (Constructed Step-by-Step):</h3>';
     let U_temp = JSON.parse(JSON.stringify(originalMatrix));
@@ -112,6 +112,8 @@ function displayResults(eliminationMatrices, L_steps, U, D, originalMatrix) {
 
     // Create U' (U_prime) from U with diagonal elements set to 1
     const U_prime = U.map((row, i) => row.map((value, j) => (i === j ? 1 : value)));
+
+    // Display U_prime matrix
     resultsDiv.innerHTML += '<h3>Modified Upper Triangular Matrix U\' (U with 1s on the diagonal):</h3>' + matrixToHtml(U_prime);
 
     const LU = multiplyMatrices(L_steps[L_steps.length - 1], U);
@@ -123,10 +125,6 @@ function displayResults(eliminationMatrices, L_steps, U, D, originalMatrix) {
         ? '<h3 style="color: green;">A = L*D*U\' verified!</h3>'
         : '<h3 style="color: red;">A ≠ L*D*U\', factorization may be incorrect.</h3>';
 }
-
-
-
-
 
 function matrixToHtml(matrix) {
     let html = '<table border="1" style="border-collapse: collapse;">';
