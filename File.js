@@ -19,7 +19,7 @@ document.getElementById('val').addEventListener('input', function () {
         for (let j = 0; j < order; j++) {
             const input = document.createElement('input');
             input.type = 'number';
-            input.className = 'matrix-input';
+            input.className = 'input-tags';
             input.dataset.row = i;
             input.dataset.col = j;
             matrixContainer.appendChild(input);
@@ -30,7 +30,8 @@ document.getElementById('val').addEventListener('input', function () {
     }
 
     const factorButton = document.createElement('button');
-    factorButton.textContent = 'Calculate LDU Factorization';
+    factorButton.setAttribute("id","btn-decompose")
+    factorButton.textContent = 'Decompose';
     factorButton.addEventListener('click', function () {
         const numericMatrix = matrix.map(row => row.map(input => parseFloat(input.value) || 0));
         const { eliminationMatrices, L_steps, U, D } = LDUFactorization(numericMatrix);

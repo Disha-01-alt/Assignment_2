@@ -51,27 +51,23 @@ h3 {
 }
 
 #btn-decompose {
+    font-weight: 600;
     font-size: 24px;
-    border: 1px solid rgb(255, 136, 0);
-    border-radius: 18px;
-    padding: 10px 16px 10px 16px;
-    font-weight: 700;
-    background-image: linear-gradient(to right, rgb(255, 64, 12), rgb(244, 237, 31));
+    border-radius: 10px;
+    padding: 8px 16px 8px 16px;
+    background-color:rgb(73, 228, 21);
     transition-property: all;
     transition-timing-function: ease-in-out;
     transition-duration: 0.4s;
+    margin-top: 18px;
     
 }
 
 #btn-decompose:hover {
-    background-image: linear-gradient(to right, rgb(244, 237, 31), rgb(255, 64, 12));
-    transform: scale(1.12);
+    background-color: rgb(80, 254, 22);
+    transform: scale(1.10);
 }
 
-#btn-decompose:active {
-    border: 3px solid rgb(255, 174, 0);
-    transform: scale(1.12);
-}
 
 #input-matrix-container {
     text-align: center;
