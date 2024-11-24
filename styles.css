@@ -1,75 +1,86 @@
-body{
-	background-image: linear-gradient(to right, rgb(86, 38, 245),rgb(226, 19, 226));
+body {
+    background-image: url("a.webp");
 }
 
-#heading-h1{
-	background-image: linear-gradient(to right, rgb(86, 38, 245),rgb(226, 19, 226));
-	padding-top: 1px;
-	border-bottom: 7px;
-	border-radius: 15px;
-	border:3px solid grey;
-	position:sticky;
-	top:0px;
-	margin-bottom: 20px;
+#heading-h1 {
+    background-image: linear-gradient(to right, rgb(174, 231, 231), rgb(19, 219, 226));
+    padding-top: 1px;
+    border-bottom: 7px solid grey; /* Corrected unit */
+    border-radius: 15px;
+    border: 3px solid grey;
+    position: sticky;
+    top: 0px;
+    margin-bottom: 20px;
 }
 
-#error{
-	font-size: 17px;
+h3 {
+    text-align: center;
+    font-size: 24px;
 }
 
-#label{
-	text-align:center;
-	font-size: 28px;
-	font-weight: 500;
+#error {
+    font-size: 17px;
 }
 
-#val{
-	font-size: 26px;
-	border-radius: 10px;
-	border: 2px solid grey;
-	padding:5px 5px 2px 5px;
-	background-color: blueviolet;
+#label {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 500;
 }
 
-
-.input-tags{
-	width: 50px;
-	font-size: 15px;
-	padding:5px 5px 4px 5px;
+#val {
+    font-size: 26px;
+    border-radius: 10px;
+    border: 2px solid grey;
+    padding: 5px 5px 2px 5px;
+    background-color: rgb(249, 253, 253);
 }
 
-@media (max-width:450px){
-	.input-tags{
-		width:40px;
-	}
-}
-
-#btn-decompose{
-	font-size: 24px;
-	border:1px solid rgb(255, 136, 0);
-	border-radius: 18px;
-	padding:10px 16px 10px 16px;
-	font-weight: 700;
-	background-image: linear-gradient(to right,rgb(255, 64, 12), rgb(244, 237, 31));
-	transition-property:all;
-	transition-timing-function: ease-in-out;
-	transition-duration: 0.4s;
-}
-
-#btn-decompose:hover{
-	background-image: linear-gradient(to right, rgb(244, 237, 31),rgb(255, 64, 12));
-	transform: scale(1.12);
+.input-tags {
+    width: 60px;
+    font-size: 26px; /* Removed duplicate */
+    padding: 5px 5px 4px 5px;
 
 }
-#btn-decompose:active{
-	border:3px solid rgb(255, 174, 0);
-	transform: scale(1.12);
+
+@media (max-width: 450px) {
+    .input-tags {
+        width: 40px;
+        height: auto;
+    }
 }
 
-#input-matrix-container{
-	text-align: center;
+#btn-decompose {
+    font-size: 24px;
+    border: 1px solid rgb(255, 136, 0);
+    border-radius: 18px;
+    padding: 10px 16px 10px 16px;
+    font-weight: 700;
+    background-image: linear-gradient(to right, rgb(255, 64, 12), rgb(244, 237, 31));
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.4s;
+    
 }
 
-#main-div{
-	text-align: center;
+#btn-decompose:hover {
+    background-image: linear-gradient(to right, rgb(244, 237, 31), rgb(255, 64, 12));
+    transform: scale(1.12);
+}
+
+#btn-decompose:active {
+    border: 3px solid rgb(255, 174, 0);
+    transform: scale(1.12);
+}
+
+#input-matrix-container {
+    text-align: center;
+}
+
+#main-div {
+    text-align: center;
+}
+
+#result-div {
+    text-align: center;
 }
